@@ -16,7 +16,7 @@ Excerpt From: Elton Stoneman. **Learn Docker in a Month of Lunches**.
 2. Now change the `index.js` file by changing the word `Hello` to something else
 3. Now build the image again.
     ```
-    docker image build --tag yahoo:v2
+    docker image build --tag yahoo:v2 .
     ```
     ![v2](docs/v2.png)
     There's a slight difference between the first and second builds. Docker is actually caching instructions that haven't change since the last build. This is important to notice since this could save extra time when building images in production.
@@ -26,13 +26,13 @@ Excerpt From: Elton Stoneman. **Learn Docker in a Month of Lunches**.
     ```
     rm Dockerfile
     cp Dockerfile_optimized Dockerfile
-    docker image build --tag yahoo:v3
+    docker image build --tag yahoo:v3 .
     ```
     
     Again, make sure to read the output. Since, the Dockerfile instructions order changed, Docker still rebuilt the last two instructions, which should be clear because there is not indication that a cached was used.
 5. Now, again change the `index.js` file again and rebuild the image
     ```
-    docker image build --tag yahoo:v4
+    docker image build --tag yahoo:v4 .
     ```
     ![v4](docs/v4.png)
     Note that all instructions are built from cache except for the `COPY` command! This should translate into faster builds in the future.
