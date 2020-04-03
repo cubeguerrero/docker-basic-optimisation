@@ -19,7 +19,7 @@ Excerpt From: Elton Stoneman. **Learn Docker in a Month of Lunches**.
     docker image build --tag yahoo:v2 .
     ```
     ![v2](docs/v2.png)
-    There's a slight difference between the first and second builds. Docker is actually caching instructions that haven't change since the last build. This is important to notice since this could save extra time when building images in production.
+    There's a slight difference between the first and second builds. Docker is actually caching instructions that haven't change since the last build. This is important since this could save extra time when building images in production.
     
     Even though the last instruction `CMD ["node", "/app/index.js"]` did not change, Docker didn't use the cached data. This is because when the Docker detected the change at the `COPY index.js /app/index.js`, any instructions below it is rebuilt as well.
 4. Now, delete the `Dockerfile` and make a copy of the `Dockerfile_optimized` and build the image again.
