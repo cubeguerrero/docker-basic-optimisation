@@ -36,3 +36,8 @@ Excerpt From: Elton Stoneman. **Learn Docker in a Month of Lunches**.
     ```
     ![v4](docs/v4.png)
     Note that all instructions are built from cache except for the `COPY` command! This should translate into faster builds in the future.
+
+## Additonal Readings
+1. [Best practices for writing Dockerfile](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+2. [Docker Layers Explained](https://dzone.com/articles/docker-layers-explained)
+
